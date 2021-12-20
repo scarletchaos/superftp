@@ -133,7 +133,7 @@ class FtpFileDownloader:
         ftp.connect(self._server_url, self._port)
 
         ftp.login(self._username, self._password)
-
+        ftp.encoding = 'UTF-8'
         if self._enable_tls:
             ftp.prot_p()
         return ftp
